@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phiếu học tập Ngữ văn 6 – Từ đồng âm, từ đa nghĩa</title>
+<style>
+:root{--green:#166534;--light:#effaf1;--line:#d7e8dc;--text:#24372d}*{box-sizing:border-box}body{margin:0;background:#f5f8f5;color:var(--text);font:16px/1.55 system-ui,Arial,sans-serif}.wrap{max-width:850px;margin:auto;padding:15px}.hero{background:linear-gradient(125deg,#14532d,#22a354);color:white;padding:28px;border-radius:20px}.hero h1{font-size:clamp(25px,5vw,37px);line-height:1.2;margin:12px 0}.hero p{margin:4px 0}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.chips span{background:#ffffff25;padding:5px 12px;border-radius:20px;font-size:13px}.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:20px;margin:16px 0}.panel h2{font-size:21px;color:var(--green);margin:5px 0 12px}.eyebrow{font-size:12px;color:#16803e;font-weight:800;letter-spacing:.6px}.muted{color:#64746b;font-size:14px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fields label:first-child{grid-column:1/-1}input[type=text],input[type=date],select{width:100%;border:1px solid #bdd3c2;border-radius:10px;padding:11px;font:inherit;background:white}label{display:block}.question{padding:14px 0;border-bottom:1px solid #e9eee9}.question:last-child{border:0}.question strong{display:block;margin-bottom:10px}.option{display:flex;align-items:flex-start;gap:9px;padding:10px;border:1px solid #dbe6dc;border-radius:10px;margin:7px 0;cursor:pointer}.option:has(input:checked){background:#e8f8ec;border-color:#229d4b}input[type=radio]{accent-color:#15803d;margin-top:5px}.buttons{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #9ac5a5;background:white;color:var(--green);border-radius:10px;padding:10px 12px;font:inherit;font-weight:650;cursor:pointer}.btn.active,.primary{background:var(--green);color:white;border-color:var(--green)}.btn:disabled{opacity:.5;cursor:not-allowed}.bank{background:var(--light);border-radius:12px;padding:13px;min-height:65px}.baskets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.basket{border:2px dashed #a0c9a8;background:#fafffb;border-radius:15px;padding:10px;min-height:200px;cursor:pointer;text-align:center}.basket svg{width:100%;max-width:200px;height:auto}.basket .buttons{justify-content:center}.matchgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.matchgrid .btn{width:100%;text-align:left;margin:5px 0;min-height:65px}.feedback{font-size:13px;color:#166534;margin-top:7px}.score{font-size:42px;color:var(--green);font-weight:800;text-align:center}.progress{height:9px;border-radius:9px;background:#e0e9e1;overflow:hidden}.progress>div{background:#16a34a;height:100%;width:0;transition:width .2s}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #70d28d;outline-offset:2px}@media(max-width:520px){.wrap{padding:9px}.panel{padding:14px}.hero{padding:21px}.basket{padding:6px}.btn{font-size:13px;padding:9px}.matchgrid .btn{font-size:12px}.basket svg{max-width:160px}}@media print{body{background:white}.wrap{max-width:none}.panel{break-inside:avoid}.btn.primary,#reset{display:none}}
+ .answer-correct{background:#e2f7e8!important;border-color:#16a34a!important;color:#14532d!important}.answer-wrong{background:#fff0ed!important;border-color:#e26a5b!important;color:#8b2f24!important}.status-note{border-radius:10px;padding:12px;margin:10px 0;background:#e8f7ec;color:#14532d}.status-warning{background:#fff5dd;color:#805200}.submitted-note{background:#dcfce7;color:#14532d;font-weight:700}button:disabled{opacity:.65;cursor:not-allowed} </style></head><body><main class="wrap">
+<header class="hero"><div>PHIẾU HỌC TẬP • NGỮ VĂN 6</div><h1>TỪ ĐỒNG ÂM<br>TỪ ĐA NGHĨA</h1><p>Khám phá sự phong phú của tiếng Việt</p><div class="chips"><span>20 câu hỏi</span><span>10 điểm</span><span>30 phút</span></div></header>
+<section class="panel"><h2>Thông tin học sinh</h2><div class="fields"><label>Họ và tên<input id="student" type="text" placeholder="Nhập họ và tên"></label><label>Lớp<input id="classroom" type="text" placeholder="6A..."></label><label>Ngày học<input id="day" type="date"></label></div></section>
+<section class="panel" style="background:var(--light)"><h2>🎯 Mục tiêu bài học</h2><p>✓ Nhận biết và phân biệt từ đồng âm, từ đa nghĩa.<br>✓ Xác định nghĩa gốc và nghĩa chuyển.<br>✓ Giải thích nghĩa của từ theo ngữ cảnh.<br>✓ Vận dụng kiến thức để phân loại, sử dụng từ chính xác.</p></section>
+<section class="panel"><div style="display:flex;justify-content:space-between"><b>Tiến độ làm bài</b><span id="progressText">0/20 câu</span></div><div class="progress"><div id="progressBar"></div></div></section>
+<section class="panel"><div class="eyebrow">PHẦN I • TRẮC NGHIỆM — 2,5 ĐIỂM</div><h2>Chọn đáp án đúng</h2><p class="muted">Câu 1–5. Mỗi câu đúng được 0,5 điểm.</p><div id="mcq"></div></section>
+<section class="panel"><div class="eyebrow">PHẦN II • ĐÚNG / SAI — 2 ĐIỂM</div><h2>Em nhận định thế nào?</h2><p class="muted">Câu 6–9. Mỗi câu đúng được 0,5 điểm.</p><div id="tf"></div></section>
+<section class="panel"><div class="eyebrow">PHẦN III • ĐIỀN KHUYẾT — 2 ĐIỂM</div><h2>Hoàn thiện kiến thức</h2><p class="muted">Câu 10–13. Chọn từ thích hợp: đồng âm, đa nghĩa, nghĩa gốc, nghĩa chuyển.</p><div id="fill"></div></section>
+<section class="panel"><div class="eyebrow">PHẦN IV • KÉO THẢ / PHÂN LOẠI — 2 ĐIỂM</div><h2>🧺 Hai chiếc rổ từ ngữ</h2><p class="muted">Câu 14–17. Trên máy tính có thể kéo thả thẻ vào rổ. Trên điện thoại, chạm thẻ rồi chạm vào rổ. Chạm thẻ đã xếp để đưa về ngân hàng từ.</p><div class="bank"><b>Ngân hàng thẻ từ</b><div class="buttons" id="bank" style="margin-top:10px"></div></div><div class="baskets" id="baskets"></div><div class="feedback" id="basketFeedback"></div></section>
+<section class="panel"><div class="eyebrow">PHẦN V • NỐI CỘT — 1,5 ĐIỂM</div><h2>Tìm nghĩa phù hợp</h2><p class="muted">Câu 18–20. Chọn từ ở cột A rồi chọn nghĩa tương ứng ở cột B. Chọn lại để thay đổi.</p><div class="matchgrid"><div><b>Cột A – Từ ngữ</b><div id="matchLeft"></div></div><div><b>Cột B – Ý nghĩa</b><div id="matchRight"></div></div></div><div id="matchChosen" class="feedback"></div><div id="matchFeedback" class="feedback"></div></section>
+<section class="panel" style="background:var(--light)"><h2>🏆 Kết quả học tập</h2><p class="muted">20 câu × 0,5 điểm = 10 điểm. Dùng “Kiểm tra lại” để xem câu đúng/sai và sửa bài. Nhấn “Nộp bài” để chốt điểm, khóa đáp án.</p><div id="result" aria-live="polite"></div><div class="buttons"><button class="btn" id="check">🔎 Kiểm tra lại trước khi nộp</button><button class="btn primary" id="grade">📩 Nộp bài và tính điểm</button><button class="btn" id="reset">Làm lại bài tập</button><button class="btn" id="print">In phiếu / Lưu PDF</button></div></section>
+<footer style="text-align:center;color:#73867a;font-size:12px;padding:15px">NGỮ VĂN 6 • PHIẾU HỌC TẬP TƯƠNG TÁC • HOẠT ĐỘNG NGOẠI TUYẾN</footer>
+</main>
+<script>
+'use strict';
+const mcq=[
+{q:'Cặp từ nào dưới đây là từ đồng âm?',o:['Cổ cò – cổ tay','Hòn đá – đá bóng','Mắt người – mắt bão','Miệng người – miệng hang'],a:1,why:'“Đá” chỉ chất rắn tự nhiên và “đá” chỉ hành động dùng chân tác động vào vật không có liên hệ về nghĩa.'},
+{q:'Nhóm nào sau đây là các cách dùng của một từ đa nghĩa?',o:['Cái ca – ca trực – ca hát','Cánh đồng – tượng đồng – tiền đồng','Đôi mắt – mắt na – mắt bão','Cái bàn – bàn bạc'],a:2,why:'Các nghĩa của “mắt” có liên hệ dựa trên sự tương đồng về hình dạng hoặc vị trí.'},
+{q:'Từ “chân” trong “chân bàn” được dùng với nghĩa nào?',o:['Nghĩa gốc','Nghĩa chuyển','Từ đồng âm với “đau chân”','Không có nghĩa'],a:1,why:'“Chân bàn” chỉ bộ phận nâng đỡ, là nghĩa chuyển.'},
+{q:'Cặp từ nào dưới đây là từ đồng âm?',o:['Đường đi – đường truyền','Lá bàng – lá phổi','Cái bàn – bàn bạc','Mặt bàn – mặt sông'],a:2,why:'“Bàn” là đồ vật và “bàn” là trao đổi ý kiến; hai nghĩa không liên hệ với nhau.'},
+{q:'Từ “đầu” trong “đầu mùa” có nghĩa là gì?',o:['Bộ phận cơ thể','Thời điểm bắt đầu','Bộ phận cao nhất của cơ thể','Một loại đồ vật'],a:1,why:'“Đầu mùa” chỉ thời điểm bắt đầu một mùa.'}];
+const tf=[
+{q:'“Con sâu” và “đào sâu” là hai từ đồng âm.',a:true,why:'“Sâu” chỉ con vật và “sâu” chỉ độ sâu không có quan hệ về nghĩa.'},
+{q:'“Mắt na” và “mắt bão” là những cách dùng của từ đa nghĩa.',a:true,why:'Các nghĩa chuyển có liên hệ với nghĩa gốc “mắt”.'},
+{q:'“Cái ca” và “ca trực” là từ đa nghĩa.',a:false,why:'Hai từ không có mối liên hệ về nghĩa.'},
+{q:'“Miệng người” và “miệng hang” có mối liên hệ về nghĩa.',a:true,why:'“Miệng hang” được gọi theo sự tương đồng về vị trí cửa mở.'}];
+const fill=[
+{q:'Các từ giống nhau về âm thanh nhưng nghĩa khác nhau, không liên hệ với nhau gọi là từ ____.',a:'đồng âm'},
+{q:'Một từ có nhiều nghĩa và các nghĩa có mối liên hệ với nhau gọi là từ ____.',a:'đa nghĩa'},
+{q:'Trong cụm từ “đau lưng”, từ “lưng” mang ____.',a:'nghĩa gốc'},
+{q:'Trong cụm từ “lưng núi”, từ “lưng” mang ____.',a:'nghĩa chuyển'}];
+const basketItems=[{id:14,t:'Ngôi sao – sao chép',a:'dongam'},{id:15,t:'Cái ca – ca trực',a:'dongam'},{id:16,t:'Cổ cò – cổ tay',a:'danghai'},{id:17,t:'Mặt bàn – mặt sông',a:'danghai'}];
+const left=[{id:18,t:'Mắt bão',a:'b2'},{id:19,t:'Chân sút',a:'b3'},{id:20,t:'Lưng núi',a:'b1'}];
+const right=[{id:'b1',t:'Phần sườn ở khoảng giữa của núi'},{id:'b2',t:'Vùng trung tâm tương đối lặng gió của cơn bão'},{id:'b3',t:'Cầu thủ bóng đá có khả năng sút bóng'}];
+let placed={},chosen=null,matches={},leftSelected=null,graded=false;
+const $=id=>document.getElementById(id);
+function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e}
+function answerFeedback(box,correct,explanation){const f=node('div',(correct?'✓ Chính xác. ':'✗ Chưa đúng. ')+explanation,'feedback');f.style.color=correct?'#166534':'#9a6700';box.append(f)}
+function makeQuestion(target,n,q,options,kind){const box=node('div',undefined,'question');box.append(node('strong','Câu '+n+'. '+q.q));options.forEach((opt,j)=>{const label=node('label',undefined,'option');const input=node('input');input.type='radio';input.name=kind+n;input.value=String(j);input.addEventListener('change',()=>{graded=false;updateProgress()});label.append(input,node('span',opt));box.append(label)});$(target).append(box)}
+mcq.forEach((q,i)=>makeQuestion('mcq',i+1,q,q.o,'mc'));
+tf.forEach((q,i)=>makeQuestion('tf',i+6,q,['Đúng','Sai'],'tf'));
+fill.forEach((q,i)=>{const box=node('div',undefined,'question');box.append(node('strong','Câu '+(i+10)+'. '+q.q));const select=node('select');select.id='fill'+i;['','đồng âm','đa nghĩa','nghĩa gốc','nghĩa chuyển'].forEach(t=>{const o=node('option',t||'Chọn từ thích hợp');o.value=t;select.append(o)});select.addEventListener('change',()=>{graded=false;updateProgress()});box.append(select);$('fill').append(box)});
+function makeBasketSvg(title,fillColor){return `<svg viewBox="0 0 160 145" role="img" aria-label="Hình chiếc rổ ${title}" xmlns="http://www.w3.org/2000/svg"><path d="M42 55 Q43 15 80 15 Q117 15 118 55" fill="none" stroke="#9A683C" stroke-width="9" stroke-linecap="round"/><path d="M12 55 Q80 43 148 55 L134 120 Q80 140 26 120 Z" fill="${fillColor}" stroke="#986F44" stroke-width="4"/>${[36,59,82,105,128].map(x=>`<path d="M${x} 55 L${x+(80-x)*.17} 126" stroke="#A47B4F" stroke-width="3" opacity=".7"/>`).join('')}${[76,95,114].map(y=>`<path d="M${17+(y-55)*.22} ${y} Q80 ${y+11} ${143-(y-55)*.22} ${y}" fill="none" stroke="#A47B4F" stroke-width="3" opacity=".7"/>`).join('')}<rect x="19" y="70" width="122" height="32" rx="7" fill="white" stroke="#986F44" stroke-width="1.5"/><text x="80" y="90" font-size="12" font-weight="bold" fill="#166534" text-anchor="middle">${title}</text></svg>`}
+function makeToken(item){const b=node('button',item.t,'btn'+(chosen===item.id?' active':''));b.type='button';b.draggable=true;b.addEventListener('click',()=>{chosen=item.id;renderBaskets()});b.addEventListener('dragstart',e=>{chosen=item.id;e.dataTransfer.setData('text/plain',String(item.id))});return b}
+function renderBaskets(){$('bank').replaceChildren();basketItems.filter(x=>!placed[x.id]).forEach(x=>$('bank').append(makeToken(x)));$('baskets').replaceChildren();[{id:'dongam',title:'TỪ ĐỒNG ÂM',color:'#D9F0D9'},{id:'danghai',title:'TỪ ĐA NGHĨA',color:'#CFEAD8'}].forEach(group=>{const box=node('div',undefined,'basket');box.setAttribute('role','button');box.setAttribute('tabindex','0');box.setAttribute('aria-label','Bỏ thẻ vào rổ '+group.title);box.innerHTML=makeBasketSvg(group.title,group.color);box.append(node('div',chosen?'Chạm để bỏ thẻ vào rổ':'Chọn thẻ phía trên','muted'));const area=node('div',undefined,'buttons');basketItems.filter(x=>placed[x.id]===group.id).forEach(item=>{const b=node('button',item.t+' ×','btn');b.type='button';b.addEventListener('click',e=>{e.stopPropagation();delete placed[item.id];graded=false;renderBaskets();updateProgress()});area.append(b)});box.append(area);const assign=id=>{if(basketItems.some(x=>x.id===id)){placed[id]=group.id;chosen=null;graded=false;renderBaskets();updateProgress()}};box.addEventListener('click',e=>{if(e.target.closest('button'))return;if(chosen!==null)assign(chosen)});box.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&chosen!==null){e.preventDefault();assign(chosen)}});box.addEventListener('dragover',e=>e.preventDefault());box.addEventListener('drop',e=>{e.preventDefault();assign(Number(e.dataTransfer.getData('text/plain')))});$('baskets').append(box)})}
+function renderMatches(){$('matchLeft').replaceChildren();$('matchRight').replaceChildren();left.forEach(item=>{const b=node('button',item.id+'. '+item.t+(matches[item.id]?' ✓':''),'btn'+(leftSelected===item.id?' active':''));b.type='button';b.addEventListener('click',()=>{leftSelected=item.id;renderMatches()});$('matchLeft').append(b)});right.forEach((item,i)=>{const b=node('button',String.fromCharCode(65+i)+'. '+item.t,'btn');b.type='button';b.addEventListener('click',()=>{if(leftSelected!==null){Object.keys(matches).forEach(k=>{if(matches[k]===item.id)delete matches[k]});matches[leftSelected]=item.id;leftSelected=null;graded=false;renderMatches();updateProgress()}});$('matchRight').append(b)});$('matchChosen').textContent=leftSelected!==null?'Đã chọn “'+left.find(x=>x.id===leftSelected).t+'”. Hãy chọn nghĩa ở cột B.':left.filter(x=>matches[x.id]).map(x=>x.t+' → '+right.find(y=>y.id===matches[x.id]).t).join(' | ')}
+function checkedRadio(name){return document.querySelector('input[name="'+name+'"]:checked')?.value}
+function updateProgress(){const n=mcq.filter((_,i)=>checkedRadio('mc'+(i+1))!==undefined).length+tf.filter((_,i)=>checkedRadio('tf'+(i+6))!==undefined).length+fill.filter((_,i)=>$('fill'+i).value).length+Object.keys(placed).length+Object.keys(matches).length;$('progressText').textContent=n+'/20 câu';$('progressBar').style.width=(n*5)+'%'}
+
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTFnhD6sId7op2m7miCQTa7Uq2h0KJWxYyL2iXtPbg9lNJyyeaJ4DHgcVjrEsHv51ciQ/exec';
+let submitted=false;
+let sending=false;
+function clearMarks(){
+ document.querySelectorAll('.answer-correct,.answer-wrong').forEach(e=>e.classList.remove('answer-correct','answer-wrong'));
+ document.querySelectorAll('.feedback.generated').forEach(e=>e.remove());
+ $('basketFeedback').textContent='';$('matchFeedback').textContent='';
+}
+function getCount(){
+ return mcq.filter((_,i)=>checkedRadio('mc'+(i+1))!==undefined).length+
+ tf.filter((_,i)=>checkedRadio('tf'+(i+6))!==undefined).length+
+ fill.filter((_,i)=>$('fill'+i).value).length+Object.keys(placed).length+Object.keys(matches).length;
+}
+function evaluate(finalize=false){
+ if(submitted || sending)return;
+ clearMarks();
+ let correct=0;
+ mcq.forEach((q,i)=>{
+   const val=checkedRadio('mc'+(i+1)), good=val===String(q.a);
+   if(good)correct++;
+   const box=$('mcq').children[i];
+   box.querySelectorAll('.option').forEach((opt,j)=>{
+      if(String(j)===val)opt.classList.add(good?'answer-correct':'answer-wrong');
+      if(finalize&&j===q.a)opt.classList.add('answer-correct');
+   });
+   box.append(node('div',good?'✓ Đúng.':val===undefined?'⚠ Chưa chọn đáp án.':finalize?'✗ Sai. Đáp án: '+String.fromCharCode(65+q.a)+'. '+q.why:'✗ Chưa đúng, em có thể sửa trước khi nộp.','feedback generated'));
+ });
+ tf.forEach((q,i)=>{
+   const val=checkedRadio('tf'+(i+6)), answer=q.a?'0':'1',good=val===answer;
+   if(good)correct++;
+   const box=$('tf').children[i];
+   box.querySelectorAll('.option').forEach((opt,j)=>{
+     if(String(j)===val)opt.classList.add(good?'answer-correct':'answer-wrong');
+     if(finalize&&String(j)===answer)opt.classList.add('answer-correct');
+   });
+   box.append(node('div',good?'✓ Đúng.':val===undefined?'⚠ Chưa chọn đáp án.':finalize?'✗ Sai. Đáp án: '+(q.a?'Đúng. ':'Sai. ')+q.why:'✗ Chưa đúng, em có thể sửa trước khi nộp.','feedback generated'));
+ });
+ fill.forEach((q,i)=>{
+   const el=$('fill'+i),good=el.value===q.a;
+   if(good)correct++;
+   if(el.value)el.classList.add(good?'answer-correct':'answer-wrong');
+   $('fill').children[i].append(node('div',good?'✓ Đúng.':!el.value?'⚠ Chưa chọn từ.':finalize?'✗ Sai. Đáp án: '+q.a:'✗ Chưa đúng, em có thể sửa trước khi nộp.','feedback generated'));
+ });
+ const bc=basketItems.filter(x=>placed[x.id]===x.a).length;correct+=bc;
+ $('basketFeedback').textContent='Đúng '+bc+'/4 thẻ.'+(finalize?' '+basketItems.filter(x=>placed[x.id]!==x.a).map(x=>x.t+' → '+(x.a==='dongam'?'Từ đồng âm':'Từ đa nghĩa')).join('; '):' Em có thể đổi rổ trước khi nộp.');
+ document.querySelectorAll('.basket').forEach((box,i)=>{
+    const group=i===0?'dongam':'danghai';
+    box.querySelectorAll('.buttons button').forEach(btn=>{
+      const item=basketItems.find(x=>btn.textContent.startsWith(x.t));
+      if(item)btn.classList.add(item.a===group?'answer-correct':'answer-wrong');
+    });
+ });
+ const ml=left.filter(x=>matches[x.id]===x.a).length;correct+=ml;
+ $('matchFeedback').textContent='Nối đúng '+ml+'/3 câu.'+(finalize?' '+left.filter(x=>matches[x.id]!==x.a).map(x=>x.t+' → '+right.find(y=>y.id===x.a).t).join('; '):' Em có thể nối lại trước khi nộp.');
+ left.forEach((item,i)=>{
+   if(matches[item.id])$('matchLeft').children[i].classList.add(matches[item.id]===item.a?'answer-correct':'answer-wrong');
+ });
+ $('result').replaceChildren();
+ if(finalize){
+   const title=node('div','ĐÃ NỘP BÀI – '+(correct/2).toLocaleString('vi-VN')+'/10 ĐIỂM','score');
+   const detail=node('p','Học sinh: '+($('student').value.trim()||'(chưa ghi tên)')+' • Lớp: '+($('classroom').value.trim()||'—')+' • Đúng '+correct+'/20 câu. '+(correct>=18?'Xuất sắc!':correct>=14?'Hoàn thành tốt!':correct>=10?'Tiếp tục cố gắng!':'Cần ôn tập thêm.'));
+   $('result').append(title,detail,node('div','Đang gửi yêu cầu lưu kết quả vào Google Sheets…','status-note submitted-note'));
+   submitted=true;
+   document.querySelectorAll('input,select').forEach(el=>el.disabled=true);
+   document.querySelectorAll('.basket button,.basket,.bank button,#matchLeft button,#matchRight button').forEach(el=>{el.style.pointerEvents='none';if(el.tagName==='BUTTON')el.disabled=true});
+   $('check').disabled=true;$('grade').disabled=true;
+    guiKetQuaGoogleSheets(correct);
+ }else{
+   $('result').append(node('div','Đã kiểm tra: '+correct+'/20 câu đúng ('+(correct/2).toLocaleString('vi-VN')+'/10 điểm tạm tính). Em có thể sửa đáp án rồi kiểm tra lại hoặc nộp bài.','status-note'));
+   const missing=20-getCount();
+   if(missing)$('result').append(node('div','Còn '+missing+' câu chưa hoàn thành.','status-note status-warning'));
+ }
+ $('result').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function reset(){
+ document.querySelectorAll('input[type=radio]').forEach(x=>{x.checked=false;x.disabled=false});
+ fill.forEach((_,i)=>{$('fill'+i).value='';$('fill'+i).disabled=false});
+ ['student','classroom','day'].forEach(id=>$(id).disabled=false);
+ placed={};chosen=null;matches={};leftSelected=null;graded=false;submitted=false;
+ clearMarks();$('result').replaceChildren();
+ $('check').disabled=false;$('grade').disabled=false;
+  sending=false;
+ renderBaskets();renderMatches();
+ document.querySelectorAll('.basket').forEach(x=>x.style.pointerEvents='');
+ updateProgress();
+}
+
+
+// KẾT NỐI GOOGLE SHEETS — không sửa nội dung câu hỏi hoặc cơ chế chấm điểm.
+async function guiKetQuaGoogleSheets(soCauDung) {
+  if (sending) return;
+  sending = true;
+  const tongSoCau = mcq.length + tf.length + fill.length + basketItems.length + left.length;
+  const soCauDaLam = getCount();
+  const payload = {
+    hoTen: $('student').value.trim(),
+    lop: $('classroom').value.trim(),
+    diem: soCauDung * 0.5,
+    soCauDung: soCauDung,
+    soCauSai: soCauDaLam - soCauDung,
+    soCauChuaLam: tongSoCau - soCauDaLam,
+    tongSoCau: tongSoCau
+  };
+  const notice = $('result').querySelector('.submitted-note');
+  try {
+    // no-cors: hoạt động từ file:// nhưng không đọc được phản hồi máy chủ.
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+    if (notice) notice.textContent = 'Đã gửi yêu cầu lưu kết quả vào Google Sheets. Vui lòng kiểm tra trang tính KẾT QUẢ để xác nhận.';
+  } catch (error) {
+    if (notice) {
+      notice.textContent = 'Không gửi được yêu cầu: ' + error.message + '. Hãy kiểm tra Internet và thử gửi lại.';
+      const retry = document.createElement('button');
+      retry.type = 'button'; retry.className = 'btn'; retry.textContent = '↻ Gửi lại kết quả';
+      retry.addEventListener('click', () => {retry.remove();guiKetQuaGoogleSheets(soCauDung);});
+      notice.after(retry);
+    }
+  } finally {
+    sending = false;
+  }
+}
+
+// Khởi tạo giao diện và liên kết các nút chức năng.
+$('check').addEventListener('click', () => evaluate(false));
+$('grade').addEventListener('click', () => {
+  if (!$('student').value.trim() || !$('classroom').value.trim()) {
+    alert('Vui lòng nhập đầy đủ Họ và tên, Lớp trước khi nộp bài.');
+    (!$('student').value.trim() ? $('student') : $('classroom')).focus();
+    return;
+  }
+  evaluate(true);
+});
+$('reset').addEventListener('click', reset);
+$('print').addEventListener('click', () => window.print());
+renderBaskets();
+renderMatches();
+updateProgress();
+</script></body></html>
